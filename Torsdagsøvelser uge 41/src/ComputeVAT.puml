@@ -1,0 +1,29 @@
+@startuml
+
+ComputeVAT --* Controller
+Controller --* Dialog
+Controller --* CalculateVAT
+Controller --* View
+
+ComputeVAT : ComputeVAT()
+ComputeVAT : public static void main(String[] args)
+
+View : String MSG
+View : String CURRENCY
+View : View()
+View : doView(double)
+
+Controller : Dialog dialog
+Controller : CalculateVAT calculateVat
+Controller : View view
+Controller : Controller()
+Controller : runController()
+
+CalculateVAT : int PRCVAT
+CalculateVAT : CalculateVAT()
+CalculateVAT : double doVAT(double)
+
+Dialog : Dialog()
+Dialog : double doDiag()
+
+@enduml
